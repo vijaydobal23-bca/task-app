@@ -24,7 +24,6 @@ export const logoutService = async () => {
   return response.data;
 };
 
-s
 export const getTasksService = async () => {
   const response = await api.get('/tasks');
   return response.data;

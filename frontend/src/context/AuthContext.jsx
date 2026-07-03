@@ -54,11 +54,12 @@ export const AuthProvider = ({ children }) => {
   const logout = async () => {
     try {
       await logoutService(); // Tell backend to log out (clear cookies if any)
+    } catch (error) {
+      console.error('Logout API failed', error);
+    } finally {
       setUser(null); // Clear React state
       localStorage.removeItem('user'); // Clear browser memory
       toast.success('Logged out successfully!');
-    } catch (error) {
-      toast.error('Logout failed');
     }
   };
 
