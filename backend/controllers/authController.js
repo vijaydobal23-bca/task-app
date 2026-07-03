@@ -33,12 +33,7 @@ export const registerUser = async (req, res) => {
       const token = generateToken(user._id);
 
     
-      res.cookie('token', token, {
-        httpOnly: true,
-        maxAge: 30 * 24 * 60 * 60 * 1000, 
-        sameSite: "none",
-        secure:true
-      });
+      res.cookie('token', token)
 
       res.status(201).json({
         _id: user._id,
@@ -69,12 +64,7 @@ export const loginUser = async (req, res) => {
     if (user && (await user.matchPassword(password))) {
       const token = generateToken(user._id);
 
-      res.cookie('token', token, {
-        httpOnly: true,
-        maxAge: 30 * 24 * 60 * 60 * 1000,
-        sameSite:"none",
-        secure:true
-      });
+      res.cookie('token', token);
 
       res.json({
         _id: user._id,
