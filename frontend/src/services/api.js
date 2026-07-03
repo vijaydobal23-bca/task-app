@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = import.meta.env.MODE === 'development' 
+  ? 'http://localhost:5000/api' 
+  : 'https://task-app-ql4f.onrender.com/api';
 
 // Config axios to always send credentials (cookies)
 const api = axios.create({
