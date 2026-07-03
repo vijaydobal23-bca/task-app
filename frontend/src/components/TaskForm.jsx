@@ -40,6 +40,11 @@ const TaskForm = () => {
       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-5 tracking-tight">Create New Task</h3>
       
       <form 
+        action="#" 
+        method="POST" 
+        name="taskForm" 
+        id="taskForm" 
+        autoComplete="off"
         onSubmit={handleSubmit} 
         className="space-y-5"
         onFocus={() => setIsFocused(true)}
@@ -56,6 +61,8 @@ const TaskForm = () => {
           <input
             type="text"
             id="title"
+            name="title"
+            required
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             className="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-gray-50 dark:bg-gray-900/50 dark:text-white transition-all duration-300 hover:border-gray-300 dark:hover:border-gray-600"
@@ -68,6 +75,8 @@ const TaskForm = () => {
           </label>
           <textarea
             id="description"
+            name="description"
+            required
             rows={3}
             value={description}
             onChange={(e) => setDescription(e.target.value)}

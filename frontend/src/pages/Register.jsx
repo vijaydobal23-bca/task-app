@@ -72,7 +72,15 @@ const Register = () => {
           </p>
         </div>
 
-        <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
+        <form 
+          action="#" 
+          method="POST" 
+          name="registerForm" 
+          id="registerForm" 
+          autoComplete="on"
+          className="mt-8 space-y-5" 
+          onSubmit={handleSubmit}
+        >
           <div className="space-y-4">
             <div className="group relative">
               <input

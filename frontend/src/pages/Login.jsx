@@ -59,7 +59,15 @@ const Login = () => {
         </div>
 
         {/* 5. The Form */}
-        <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
+        <form 
+          action="#" 
+          method="POST" 
+          name="loginForm" 
+          id="loginForm" 
+          autoComplete="on"
+          className="mt-8 space-y-5" 
+          onSubmit={handleSubmit}
+        >
           <div className="space-y-4">
             {/* Email Input Field */}
             <div className="group relative">
